@@ -26,7 +26,7 @@ func CopyIn(table string, columns ...string) string {
 		}
 		stmt += QuoteIdentifier(col)
 	}
-	stmt += ") FROM STDIN"
+	stmt += ") FROM STDIN (ENCODING 'UTF8')"
 	return stmt
 }
 
@@ -40,7 +40,7 @@ func CopyInSchema(schema, table string, columns ...string) string {
 		}
 		stmt += QuoteIdentifier(col)
 	}
-	stmt += ") FROM STDIN"
+	stmt += ") FROM STDIN (ENCODING 'UTF8')"
 	return stmt
 }
 
